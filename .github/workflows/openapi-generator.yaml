@@ -69,7 +69,7 @@ jobs:
             ~/.gradle
             !~/.gradle/caches/*/plugin-resolution/
             !~/.m2/repository/org/openapitools/
-          key: ${{ runner.os }}-test-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
+          key: ${{ runner.os }}-test-${{ env.cache-name }}-${{ hashFiles('**/pom') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
@@ -90,7 +90,7 @@ jobs:
       - name: Test Summary
         uses: test-summary/action@v2
         with:
-          paths: "test/results/**/TEST-*.xml"
+          path: '**/surefire-reports/TEST-*.xml'
         if: always()
 
 
