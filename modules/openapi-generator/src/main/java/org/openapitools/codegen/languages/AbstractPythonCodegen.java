@@ -1377,6 +1377,7 @@ public abstract class AbstractPythonCodegen extends DefaultCodegen implements Co
     @Override
     public ModelsMap postProcessModels(ModelsMap objs) {
         // process enum in models
+        System.out.println("postProcessModels");
         return postProcessModelsEnum(objs);
     }
 
