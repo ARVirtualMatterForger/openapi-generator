@@ -87,6 +87,12 @@ jobs:
         with:
           name: surefire-test-results
           path: '**/surefire-reports/TEST-*.xml'
+      - name: Test Summary
+        uses: test-summary/action@v2
+        with:
+          paths: "test/results/**/TEST-*.xml"
+        if: always()
+
 
   documentation:
     name: Docs up-to-date
