@@ -90,8 +90,10 @@ jobs:
       - name: Test Summary
         uses: dorny/test-reporter@v1
         with:
-          name: DotNET Tests
+          name: Java Tests
           path: '**/surefire-reports/TEST-*.xml'
+          reporter: java-junit
+          fail-on-error: true
         if: always()
 
 
